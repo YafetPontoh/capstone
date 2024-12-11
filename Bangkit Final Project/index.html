@@ -117,6 +117,51 @@
         .bd-mode-toggle .dropdown-menu .active .bi {
             display: block !important;
         }
+
+        .card-custom {
+            overflow: hidden;
+            min-height: 450px;
+            box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+        }
+
+        .card-custom-img {
+            height: 200px;
+            min-height: 200px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-color: inherit;
+        }
+
+        /* First border-left-width setting is a fallback */
+        .card-custom-img::after {
+            position: absolute;
+            content: '';
+            top: 161px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-top-width: 40px;
+            border-right-width: 0;
+            border-bottom-width: 0;
+            border-left-width: 545px;
+            border-left-width: calc(575px - 5vw);
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            border-left-color: inherit;
+        }
+
+        .card-custom-avatar img {
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+            position: absolute;
+            top: 100px;
+            left: 1.25rem;
+            width: 100px;
+            height: 100px;
+        }
     </style>
 
 
@@ -225,14 +270,69 @@
 
     <main>
         <div class="container py-5">
-            <div class="p-5 mb-4 rounded-3" style="background-color: #EEDF7A;">
+            <div class="p-5 rounded-3" style="background-color: #EEDF7A;">
                 <div class="container-fluid py-5" style="color: #343131;">
                     <h1 class="display-5 fw-bold">Temukan Gaya Belajarmu</h1>
-                    <p class="col-md-8 fs-4">Isi 10 soal yang tersedia melalui tombol di bawah ini dan temukan gaya belajar yang paling cocok untukmu. Jangan lewatkan kesempatan untuk memahami dirimu lebih dalam dalam proses belajar!</p>
-                    <button class="btn btn-bd-secondary btn-lg" type="button" onclick="window.location.href='test.html'">Mulai Test</button>
+                    <p class="col-md-8 fs-4">Melalui beberapa jenis kuis dan materi yang ada di website ini kamu bisa menemukan gaya belajar yang paling cocok untukmu. Jangan lewatkan kesempatan untuk memahami dirimu lebih dalam dalam proses belajar!</p>
+                    <button class="btn btn-bd-secondary btn-lg" type="button" onclick="window.location.href='#card1'">Let's Go</button>
                 </div>
             </div>
         </div>
+
+    <!-- 3 CARD -->
+
+        <div class="container" id="card1">
+            <div class="row pt-5 m-auto">
+                <div class="col-md-6 col-lg-4 pb-3">
+                    <div class="card card-custom bg-white border-white border-0">
+                        <div class="card-custom-img" style="background-image: url(/assets/Images/img1.jpg);"></div>
+                        <div class="card-custom-avatar">
+                            <img class="img-fluid" src="/assets/Images/kuiz.png" alt="Avatar" />
+                        </div>
+                        <div class="card-body" style="overflow-y: auto">
+                            <h4 class="card-title">Identify your learning style</h4>
+                            <p class="card-text">Discover your unique learning style through a simple questionnaire.</p>
+                        </div>
+                        <div class="card-footer" style="background: inherit; border-color: inherit;">
+                            <a href="/test.html" class="btn btn-bd-secondary">Take a Quiz</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 pb-3">
+                    <div class="card card-custom bg-white border-white border-0">
+                        <div class="card-custom-img" style="background-image: url(/assets/Images/img2.jpg);"></div>
+                        <div class="card-custom-avatar">
+                            <img class="img-fluid" src="/assets/Images/personaliz.png" alt="Avatar" />
+                        </div>
+                        <div class="card-body" style="overflow-y: auto">
+                            <h4 class="card-title">Personalized learning profile</h4>
+                            <p class="card-text">Receive a detailed summary of your learning preferences.
+                            </p>
+                        </div>
+                        <div class="card-footer" style="background: inherit; border-color: inherit;">
+                            <a href="/personalizedTest.html" class="btn btn-bd-secondary">Take a Quiz</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 pb-3">
+                    <div class="card card-custom bg-white border-white border-0">
+                        <div class="card-custom-img" style="background-image:url(/assets/Images/img3.jpg);"></div>
+                        <div class="card-custom-avatar">
+                            <img class="img-fluid" src="/assets/Images/strategies.png" alt="Avatar" />
+                        </div>
+                        <div class="card-body" style="overflow-y: auto">
+                            <h4 class="card-title">Effective study strategies</h4>
+                            <p class="card-text">Learn strategies tailored to your learning style</p>
+                        </div>
+                        <div class="card-footer" style="background: inherit; border-color: inherit;">
+                            <a href="/materi.html" class="btn btn-bd-secondary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 CARD -->
 
         <div id="myCarousel" class="carousel slide mb-7" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -256,7 +356,7 @@
 
                 <div class="carousel-item">
                     <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <image width="100%" height="100%" href="./assets/Images/potensi.jpg" />
+                        <image width="100%" height="100%" href="./assets/Images/potensi.jpg" />
                     </svg>
                     <div class="container">
                         <div class="carousel-caption">
@@ -267,7 +367,7 @@
                 </div>
                 <div class="carousel-item">
                     <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <image width="100%" height="100%" href="./assets/Images/kurangi stres.jpg" />
+                        <image width="100%" height="100%" href="./assets/Images/kurangi stres.jpg" />
                     </svg>
                     <div class="container">
                         <div class="carousel-caption text-end">
